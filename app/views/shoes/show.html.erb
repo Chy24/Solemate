@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+   <% @shoe.images.each do |image| %>
+    <%= image_tag(image.url) %>
+    <% end %>
+</div>
 
-<p>
-<%= image_tag(@shoe.image_url.to_s) %>
-</p>
+
 
 <p>
   <strong>Title:</strong>

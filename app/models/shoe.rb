@@ -1,4 +1,5 @@
 class Shoe < ApplicationRecord
+  has_many :images
 
-  mount_uploader :image, ImageUploader
+  mount_uploaders :images, ImageUploader
 end
