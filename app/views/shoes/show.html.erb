@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+<%= image_tag(@shoe.image_url.to_s) %>
+</p>
+
 <p>
   <strong>Title:</strong>
   <%= @shoe.title %>
@@ -7,7 +12,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @shoe.type %>
+  <%= @shoe.category %>
 </p>
 
 <p>
@@ -17,7 +22,7 @@
 
 <p>
   <strong>Size:</strong>
-  <%= @shoe.size %>
+  <%= @shoe.sex %>
 </p>
 
 <p>

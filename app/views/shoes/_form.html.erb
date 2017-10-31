@@ -12,13 +12,17 @@
   <% end %>
 
   <div class="field">
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, id: :shoe_title %>
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type, id: :shoe_type %>
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :shoe_category %>
   </div>
 
   <div class="field">
@@ -27,8 +31,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :size %>
-    <%= form.text_field :size, id: :shoe_size %>
+    <%= form.label :sex %>
+    <%= form.text_field :sex, id: :shoe_sex %>
   </div>
 
   <div class="field">
