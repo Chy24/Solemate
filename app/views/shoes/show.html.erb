@@ -45,5 +45,7 @@
   <%= @shoe.rating %>
 </p>
 
+<%= render 'comments/comment' %>
+
 <%= link_to 'Edit', edit_shoe_path(@shoe) %> |
 <%= link_to 'Back', shoes_path %>

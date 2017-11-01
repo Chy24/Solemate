@@ -1,0 +1,14 @@
+<h2>This shoe has <%= pluralize(@comments.count, "Review") %></h2>
+
+<% @comments.each do |comment| %>
+  <p><b><%= comment.user.username %></b></p>
+  <p><%= comment.content %></p>
+
+  <% if current_user == comment.user %>
+    <%= link_to "Delete Comment", [comment.shoe, comment], method: :delete %>
+    <%= link_to "Edit Comment", edit_shoe_comment_path(comment.shoe, comment) %>
+  <% end %>
+
+<% end %>
+
+<%= render 'comments/form' %>
