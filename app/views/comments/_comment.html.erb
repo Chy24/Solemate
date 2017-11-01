@@ -2,7 +2,7 @@
 
 <% @comments.each do |comment| %>
   <p><b><%= comment.user.username %></b></p>
-  <p><%= comment.content %></p>
+  <p><%= emoji comment.content %></p>
 
   <% if current_user == comment.user %>
     <%= link_to "Delete Comment", [comment.shoe, comment], method: :delete %>
