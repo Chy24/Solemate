@@ -1,5 +1,3 @@
-<h1>Solemates</h1>
-
 <% if user_signed_in? %>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
 <% else %>
@@ -7,3 +5,5 @@
 <% end %>
 
 <%= link_to 'Shoes', shoes_url(@shoe) %>
+
+<%= link_to 'Posts', posts_url(@post) %>
