@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to conversation_messages_url(@conversation), notice: 'Message was successfully created.' }
+        format.html { redirect_to conversation_messages_url(@conversation)}
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }

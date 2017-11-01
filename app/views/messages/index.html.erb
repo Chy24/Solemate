@@ -8,12 +8,6 @@
 
 <h1 class= "text-center" ><%= recipient.username %></h1>
 
-<br>
-
-<%= link_to 'New Message', new_conversation_message_path(@conversation) %>
-
-
-<div class=”ui segment”>
  <% @messages.each do |message| %>
   <% if message.content %>
    <% user = User.find(message.sender_id) %>
@@ -31,3 +25,10 @@
  <% end %>
 <% end %>
 </div>
+
+<%= form_for([@conversation, @conversation.messages.build]) do |f| %>
+   <%= f.text_area :content %>
+ <% f.text_field :user, value: current_user.id %>
+   <%= f.submit "Reply" %>
+<% end %>
+

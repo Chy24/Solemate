@@ -6,5 +6,4 @@ class Conversation < ApplicationRecord
   
   validates_uniqueness_of :user1, :scope => :user2
 
-
 end
