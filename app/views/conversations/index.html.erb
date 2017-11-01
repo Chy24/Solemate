@@ -1,27 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Conversations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User1</th>
-      <th>User2</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @conversations.each do |conversation| %>
-      <tr>
-        <td><%= conversation.user1.username %></td>
-        <td><%= conversation.user2.username %></td>
-        <td><%= link_to 'Show', conversation_messages_path(conversation) %></td>
-      </tr>
+<div>
+ <h1>Mailbox</h1>
+ <div>
+  <div>
+   <% @conversations.each do |conversation| %>
+   <% if conversation.user1 == current_user || conversation.user2 == current_user %>
+    <% if conversation.user1 == current_user %>
+      <% recipient = User.find(conversation.user2.id) %>
+    <% else %>
+      <% recipient = User.find(conversation.user1.id) %>
     <% end %>
-  </tbody>
-</table>
+    <%= link_to recipient.username, conversation_messages_path(conversation)%>
+   <% end %>
+  <% end %>
+  </div>
+ </div>
+</div>
+<div>
 
-<br>
+
 
 <%= link_to 'New Conversation', new_conversation_path %>
