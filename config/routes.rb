@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root 'dashboard#index'
   devise_for :users
+  resources :conversations do
+    resources :messages
+  end
+  root 'dashboard#index'
   resources :shoes do
     resources :images, :only => [:create, :destroy]
     resources :comments 

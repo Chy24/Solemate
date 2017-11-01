@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<table>
+  <thead>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+
+        <td><%= message.sender.username %></td>
+        <td><%= message.content %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_conversation_message_path(@conversation) %>
