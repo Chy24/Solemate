@@ -1,0 +1,23 @@
+<h1>Buy the <%= @charge.post.title %></h1>
+
+<%= form_with(model: @charge) do |f| %> 
+  <%= f.hidden_field :video_id %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $<%= @charge.post.asking_price %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%= @charge.post.brand %> <%= @charge.post.title %>"
+          data-email="<%= current_user.email %>"
+          data-amount="<%= @charge.post.asking_price %>"
+          data-currency="aud"
+          data-locale="auto"></script>
+<% end %>
