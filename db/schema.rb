@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101062602) do
+ActiveRecord::Schema.define(version: 20171101233858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,13 +49,17 @@ ActiveRecord::Schema.define(version: 20171101062602) do
     t.bigint "user_id"
     t.text "title"
     t.text "description"
-    t.string "image"
     t.boolean "shipping"
     t.text "condition"
     t.float "asking_price"
     t.boolean "auction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "images", default: [], array: true
+    t.string "brand"
+    t.float "size"
+    t.text "color"
+    t.text "category"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

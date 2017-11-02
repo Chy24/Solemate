@@ -12,11 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id_id %>
-    <%= form.text_field :user_id_id, id: :post_user_id_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :title %>
     <%= form.text_area :title, id: :post_title %>
   </div>
@@ -27,13 +22,32 @@
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :post_image %>
+    <%= form.file_field :images, multiple: true %>
   </div>
 
   <div class="field">
     <%= form.label :shipping %>
     <%= form.check_box :shipping, id: :post_shipping %>
+  </div>
+
+    <div class="field">
+    <%= form.label :brand %>
+    <%= form.text_area :brand, id: :post_brand %>
+  </div>
+
+    <div class="field">
+    <%= form.label :size %>
+    <%= form.text_area :size, id: :post_size %>
+  </div>
+
+      <div class="field">
+    <%= form.label :color %>
+    <%= form.text_area :color, id: :post_color %>
+  </div>
+
+      <div class="field">
+    <%= form.label :category %>
+    <%= form.text_area :category, id: :post_category %>
   </div>
 
   <div class="field">

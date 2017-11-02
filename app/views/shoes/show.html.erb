@@ -1,11 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+
+
+<div class="text-center"><%= @shoe.brand %></div>
+
+<div class="text-center"><%= @shoe.title %></div>
+
+
+
+
 <div>
    <% @shoe.images.each do |image| %>
     <%= image_tag(image.url) %>
     <% end %>
 </div>
-
 
 <%= link_to "Delete", shoe_image_path(@shoe), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
 
@@ -20,10 +28,8 @@
   <%= @shoe.category %>
 </p>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @shoe.brand %>
-</p>
+
+  
 
 <p>
   <strong>Size:</strong>

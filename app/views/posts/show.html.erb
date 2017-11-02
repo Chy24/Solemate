@@ -1,44 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
+<div class="text-center">
+  <%= @post.brand %>
+</div>
+
+<div class="text-center">
   <%= @post.title %>
-</p>
+</div>
 
-<p>
-  <strong>Description:</strong>
+<div class="text-center">
+   <% @post.images.each do |image| %>
+    <%= image_tag(image.url) %>
+    <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">Asking Price: <%= @post.asking_price %></div>
+    <div class="col">Size: <%= @post.size %></div>
+    <div class="w-100"></div>
+    <div class="col">Condition: <%= @post.condition %></div>
+    <div class="col">Category: <%= @post.category %></div>
+    <div class="w-100"></div>
+    <div class="col">Shipping: <%= @post.shipping %></div>
+    <div class="col">Color: <%= @post.color %></div>
+  </div>
+</div>
+
+<div class="text-center">
   <%= @post.description %>
-</p>
+</div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
-</p>
-
-<p>
-  <strong>Shipping:</strong>
-  <%= @post.shipping %>
-</p>
-
-<p>
-  <strong>Condition:</strong>
-  <%= @post.condition %>
-</p>
-
-<p>
-  <strong>Asking price:</strong>
-  <%= @post.asking_price %>
-</p>
-
-<p>
-  <strong>Auction:</strong>
-  <%= @post.auction %>
-</p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+
+
+
+<%= @post.user.username %>
+<br>
+<%= link_to "View Profile", current_user  %> | <%= link_to 'Message', new_conversation_path %>
+
