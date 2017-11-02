@@ -1,31 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Asking price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <% if post.images.present? %>
-          <td><%= image_tag post.images_urls[0] %></td>
-        <% end %>
-        <td><%= post.asking_price %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="row">
+<% @posts.each do |post| %>
+<div class=".col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0">
+  <% if post.images.present? %>
+    <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
     <% end %>
-  </tbody>
-</table>
+    <br>
+    <div class="text-center"><%= link_to post.brand %> | <%= link_to post.title %></div>
+    <br>
+    <div class="text-center"><%= link_to post.asking_price %></div>
+   
+  <%= link_to 'Show', post %> <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+</div>
 
 <br>
 
