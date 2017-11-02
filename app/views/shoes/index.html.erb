@@ -16,6 +16,13 @@
     </tr>
   </thead>
 
+              
+<div class="text-center">
+   <% @post.images.each do |image| %>
+    <%= image_tag(image.url) %>
+    <% end %>
+</div>
+
   <tbody>
     <% @shoes.each do |shoe| %>
       <tr>
