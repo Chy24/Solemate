@@ -1,1 +1,32 @@
 @import "bootstrap";
+@import "posts"; 
+
+.logo img{
+  max-width: 120x; 
+  max-height: 120px;
+  padding: 10px; 
+}
+
+* {
+  font-family: 'Roboto';
+  font-weight: 300; 
+}
+
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}

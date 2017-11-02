@@ -1,72 +1,79 @@
 <p id="notice"><%= notice %></p>
 
-
-<div class="text-center">
-  <%= @post.brand %>
-</div>
-
-<div class="text-center">
-  <%= @post.title %>
-</div>
-
-<div id="carousel" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel" data-slide-to="1"></li>
-    <li data-target="#carousel" data-slide-to="2"></li>
-    <li data-target="#carousel" data-slide-to="3"></li>
-    <li data-target="#carousel" data-slide-to="4"></li>
-    <li data-target="#carousel" data-slide-to="5"></li>
-    <li data-target="#carousel" data-slide-to="6"></li>
-  </ol>
+<div class = "post-heading">
   <div class="text-center">
-    <div class="carousel-inner">
-    <% i = 0 %>
-    <% @post.images.each do |image| %>
-      <% if i == 0 %>
-      <div class="carousel-item active">
-        <% i = i + 1 %>
-      <%else %>
-      <div class="carousel-item">
+    <h1><%= @post.brand.upcase %></h1>
+  </div>
+
+  <div class="text-center">
+    <h1><%= @post.title.upcase %></h1>
+  </div>
+</div>
+
+<div class"post-image">
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
+      <li data-target="#carousel" data-slide-to="3"></li>
+      <li data-target="#carousel" data-slide-to="4"></li>
+      <li data-target="#carousel" data-slide-to="5"></li>
+      <li data-target="#carousel" data-slide-to="6"></li>
+    </ol>
+    <div class="text-center">
+      <div class="carousel-inner">
+      <% i = 0 %>
+      <% @post.images.each do |image| %>
+        <% if i == 0 %>
+        <div class="carousel-item active">
+          <% i = i + 1 %>
+        <%else %>
+        <div class="carousel-item">
+        <%end%>
+        <%=link_to image_tag image.url %>
+        </div>
       <%end%>
-      <%=link_to image_tag image.url %>
       </div>
-    <%end%>
+    </div>
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="post-info">
+  <div class="container" >
+    <div class="row">
+      <div class="col">Asking Price: <%= @post.asking_price %></div>
+      <div class="col">Size: <%= @post.size %></div>
+      <div class="w-100"></div>
+      <div class="col">Condition: <%= @post.condition %></div>
+      <div class="col">Category: <%= @post.category %></div>
+      <div class="w-100"></div>
+      <div class="col">Shipping: <%= @post.shipping %></div>
+      <div class="col">Color: <%= @post.color %></div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col">Asking Price: <%= @post.asking_price %></div>
-    <div class="col">Size: <%= @post.size %></div>
-    <div class="w-100"></div>
-    <div class="col">Condition: <%= @post.condition %></div>
-    <div class="col">Category: <%= @post.category %></div>
-    <div class="w-100"></div>
-    <div class="col">Shipping: <%= @post.shipping %></div>
-    <div class="col">Color: <%= @post.color %></div>
-  </div>
-</div>
-
-<div class="text-center">
+<div class="post-description">
   <%= @post.description %>
 </div>
+
+<div class="post-contact">
+<b><%= @post.user.username %></b>
+<br>
+<%= link_to "View Profile", current_user  %> | <%= link_to 'Message', new_conversation_path %>
+</div>
+
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
-
-<%= @post.user.username %>
-<br>
-<%= link_to "View Profile", current_user  %> | <%= link_to 'Message', new_conversation_path %>
 
