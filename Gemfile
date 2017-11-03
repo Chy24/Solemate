@@ -41,6 +41,7 @@ gem 'jquery-rails'
 gem 'stripe'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'httparty'
+gem 'bootstrap_form'
 
 
 group :development, :test do

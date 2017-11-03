@@ -5,6 +5,11 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order("created_at DESC")
+    end
   end
 
   # GET /posts/1
@@ -61,7 +66,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -70,6 +75,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id_id, :title, :description,:brand, :shipping, :size, :color, :category, :condition, :asking_price, :auction, {images: []})
+      params.require(:post).permit(:user_id_id, :title, :description, :brand, :shipping, :size, :color, :category, :condition, :asking_price, :auction, {images: []})
     end
 end

@@ -1,20 +1,17 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-       <a class="navbar-brand" href="#"><div class="logo" ><%= image_tag "solematewhite.png" %></div></a>
+       <a class="navbar-brand" href="/">
+       <div class="logo" ><%= image_tag "solematewhite.png" %></div></a>
     </div>
-      <ul class="nav navbar-nav navbar-left">
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                  <span class="glyphicon glyphicon-search"></span>
-                </button>
-              </div>
-          </div>
-        </form>
-      </ul>
+      <div id='wrap'>
+        <ul class="nav navbar-nav navbar-left">
+          <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+          <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </ul>
+      </div>
       <ul class="nav navbar-nav">
         <li><%= link_to 'Shoes', shoes_url(@shoe) %></li>
         <li><%= link_to 'Posts', posts_url(@post) %></li>
