@@ -7,6 +7,11 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = @conversation.messages
+
+    response = HTTParty.get("http://api.giphy.com/v1/gifs/search?q=#{params[:word]}&api_key=D9IW0ZULPDtQw7sGKmDpPMVtdm1pQrJL")
+    buffer = response.body
+    parsegif = JSON.parse(buffer)
+    @gif = parsegif['data'][rand(25)]['images']['original']['url']
   end
 
   # GET /messages/1
@@ -15,7 +20,7 @@ class MessagesController < ApplicationController
   end
 
   # GET /messages/new
-  def new
+  def new  
     @message = Message.new
   end
 

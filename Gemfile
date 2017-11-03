@@ -40,6 +40,8 @@ gem "mini_magick"
 gem 'jquery-rails'
 gem 'stripe'
 gem 'mailgun-ruby', '~>1.1.6'
+gem 'httparty'
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
