@@ -39,7 +39,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem "mini_magick"
 gem 'jquery-rails'
 gem 'stripe'
-
+gem 'mailgun-ruby', '~>1.1.6'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'

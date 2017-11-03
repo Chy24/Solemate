@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
   resources :charges, only:[:index, :show, :new, :create]
+  get '/support' => 'support#new'
+  post '/support' => 'support#create'
+  
 end
