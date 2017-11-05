@@ -35,8 +35,9 @@
 
 <h2>Reply with a GIF</h2>
 <%= form_with url: conversation_messages_path(@conversation), local: true, method: :get do |f| %>
-<%= f.text_field :word %>
+<%= f.text_field :query %>
 <%= f.button "Search" %>
+  <% if @gif %>
+<%= image_tag @gif%>
 <% end %>
-
-<%= image_tag @gif %>
+<% end %>

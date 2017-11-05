@@ -8,11 +8,15 @@ class MessagesController < ApplicationController
   def index
     @messages = @conversation.messages
 
+    if !params[:query].nil?
+      if !params[:query].empty?
     api_key = ENV.fetch('GIPHY_KEY')
-    response = HTTParty.get("https://api.giphy.com/v1/gifs/search?api_key=#{api_key}&q=#{params[:word]}&limit=25&offset=0&rating=PG-13&lang=en")
+    response = HTTParty.get("https://api.giphy.com/v1/gifs/search?api_key=#{api_key}&q=#{params[:query]}&limit=25&offset=0&rating=PG-13&lang=en")
     buffer = response.body
     parsegif = JSON.parse(buffer)
     @gif = parsegif['data'][rand(25)]['images']['original']['url']
+      end
+    end
   end
 
   # GET /messages/1
