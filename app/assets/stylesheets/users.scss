@@ -31,3 +31,7 @@ ul {
 .socialicon img {
   padding: 20px; 
 }
+
+.required:after {
+  background-color: red;
+}

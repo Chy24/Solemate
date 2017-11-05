@@ -43,7 +43,6 @@ gem 'mailgun-ruby', '~>1.1.6'
 gem 'httparty'
 gem 'bootstrap_form'
 
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
