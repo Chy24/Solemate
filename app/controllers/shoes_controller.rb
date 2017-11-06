@@ -5,6 +5,7 @@ class ShoesController < ApplicationController
   # GET /shoes.json
   def index
     @shoes = Shoe.all
+    @random_shoe = Shoe.order("RANDOM()").limit(10)
   end
 
   # GET /shoes/1

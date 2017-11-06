@@ -15,6 +15,11 @@ class MessagesController < ApplicationController
     buffer = response.body
     parsegif = JSON.parse(buffer)
     @gif = parsegif['data'][rand(25)]['images']['original']['url']
+    message = Message.new
+    message.conversation_id = @conversation.id 
+    message.sender = current_user 
+    message.images = @gif
+    message.save
       end
     end
   end

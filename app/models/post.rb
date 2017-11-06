@@ -7,4 +7,5 @@ class Post < ApplicationRecord
     where("title ILIKE ? OR brand ILIKE ? OR color ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
   end
 
+  
 end

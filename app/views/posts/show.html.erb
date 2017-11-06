@@ -8,6 +8,7 @@
   <div class="text-center">
     <h1><%= @post.title.upcase %></h1>
   </div>
+</div>
 
   <div class="text-center">
     <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -15,8 +16,6 @@
     <% end %>
   </div>
 </div>
-
-
 
 <div class"post-image">
   <div id="carousel" class="carousel slide" data-ride="carousel">

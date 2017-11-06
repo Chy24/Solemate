@@ -8,36 +8,39 @@
 
 <h1 class= "text-center" ><%= recipient.username %></h1>
 
- <% @messages.each do |message| %>
+
+<% @messages.each do |message| %>
+<div class="messenger">
+  <% if message.sender == current_user %>
+    <div class="row justify-content-end">
+  <% else %>
+    <div class="row justify-content-start">
+  <% end %> 
   <% if message.content %>
    <% user = User.find(message.sender_id) %>
-   <div class=”item”>
-    <div class=”content”>
-     <div class=”header”><strong><%= user.username %></strong>  
-      <div class=”list”>
-       <div class=”item”>
-        <i class=”right triangle icon”></i>
-         <%= message.content %>
-      </div>
+     <div class="username"><%= user.username %></div>
+      <%= message.content %>
+  <% end %>
+  <% if message.images %>
+   <% user = User.find(message.sender_id) %>
+     <div class="username"><%= user.username %></div><br>
+  <%= image_tag message.images %>
+  <% end %>
     </div>
-   </div>
- </div>
- <% end %>
-<% end %>
-</div>
+    </div>
+  <% end %>
+<div>
 
 <%= form_for([@conversation, @conversation.messages.build]) do |f| %>
    <%= f.text_area :content %>
  <% f.text_field :user, value: current_user.id %>
    <%= f.submit "Reply" %>
 <% end %>
-
-
 <h2>Reply with a GIF</h2>
 <%= form_with url: conversation_messages_path(@conversation), local: true, method: :get do |f| %>
 <%= f.text_field :query %>
-<%= f.button "Search" %>
+<%= f.button "Reply" %>
   <% if @gif %>
-<%= image_tag @gif%>
 <% end %>
 <% end %>
+</div>
