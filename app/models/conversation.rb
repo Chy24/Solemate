@@ -6,4 +6,5 @@ class Conversation < ApplicationRecord
   
   validates_uniqueness_of :user1, :scope => :user2
 
+  scope :between, ->(user1,user2){where("(user1_id = ? AND user2_id = ?) OR (user1_id = ? AND user2_id = ?)", user1,user2,user2,user1)}
 end

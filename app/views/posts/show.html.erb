@@ -94,12 +94,15 @@
 </div>
 
 <div class="post-contact">
-<b><%= @post.user.username %></b>
-<br>
-<%= link_to "View Profile", current_user  %> | <%= link_to 'Message', new_conversation_path %>
+  <b><%= @post.user.username %></b><br>
+  <%= link_to "View Profile", current_user  %> |
+
+  <% if !Conversation.between(current_user, @post.user).present? %> 
+  <%= link_to 'Message', conversations_path(user2_id: @post.user.id), method: :post %>
+  <% else %>
+  <%= link_to 'Message', conversation_messages_path(Conversation.between(current_user, @post.user).first) %>
+  <% end %>
 </div>
-
-
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

@@ -29,10 +29,10 @@ class ConversationsController < ApplicationController
   def create
     @conversation = Conversation.new(conversation_params)
     @conversation.user1 = current_user
-
+    # @conversation.user2 = 
     respond_to do |format|
       if @conversation.save
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
+        format.html { redirect_to conversation_messages_path(@conversation.id), notice: 'Conversation was successfully created.' }
         format.json { render :show, status: :created, location: @conversation }
       else
         format.html { render :new }
@@ -41,6 +41,7 @@ class ConversationsController < ApplicationController
     end
   end
 
+  
   # PATCH/PUT /conversations/1
   # PATCH/PUT /conversations/1.json
   def update
@@ -73,6 +74,6 @@ class ConversationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def conversation_params
-      params.require(:conversation).permit(:user2_id)
+      params.permit(:user2_id)
     end
 end

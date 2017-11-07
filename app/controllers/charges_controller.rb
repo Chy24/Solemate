@@ -30,7 +30,7 @@ class ChargesController < ApplicationController
       :customer    => customer.id,
       :amount      => @amount,
       :description => @charge.post.title,
-      :currency    => 'aud'
+      :currency    => 'aud' 
     )
 
     @charge.charge_identifer = charge.id
