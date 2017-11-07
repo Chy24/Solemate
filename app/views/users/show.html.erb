@@ -1,2 +1,33 @@
-<h1><%= full_name  %></h1>
+<h1 class="text-center"><%= @user.username %></h1><br>
+<%= @user.rating %>
+
+<div class="text-center">
+  <% if user_signed_in? && current_user.id == @user.id %>
+    <%= link_to "Edit Profile", edit_user_registration_path(@user)  %> |  <%= link_to 'My Messages', conversations_url(@conversation) %>
+  <% else %>
+  <% if !Conversation.between(current_user, @user).present? %> 
+    <%= link_to 'Message', conversations_path(user2_id: @user.id), method: :post %>
+  <% else %>
+    <%= link_to 'Message', conversation_messages_path(Conversation.between(current_user, @user).first) %>
+  <% end %>
+  <% end %>
+</div>
+
+<div class="text-center">
+<%= @user.bio %>
+</div>
+
+<div class="text-center">
+<%= @user.first_name %>
+</div>
+<div class="text-center">
+<%= @user.last_name %>
+</div>
+
+<div class="text-center">
+<%= @user.location %>
+</div>
+
+
+
 

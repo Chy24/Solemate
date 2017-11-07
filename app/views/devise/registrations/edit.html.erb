@@ -15,9 +15,12 @@
         <%= f.email_field :email %>
         <%= f.text_field :first_name %>
         <%= f.text_field :last_name %>
-        <%= f.date_field :dob, label: "Date of birth" %>
         <%= f.text_field :bio %>
-        <%= f.password_field :password %>
+        <%= f.text_field :location %>
+        <%= f.file_field :images, multiple: true %>
+        <%= f.hidden_field :images_cache %>
+        <%= f.date_field :dob, label: "Date of birth" %>
+        <%= f.password_field :current_password %>
         <%= f.password_field :password_confirmation %>
         <%= f.submit "Save changes", class: "btn btn-link setup-button" %>
       </div>

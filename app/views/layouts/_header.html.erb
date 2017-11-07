@@ -13,6 +13,7 @@
         </ul>
       </div>
       <ul class="nav navbar-nav">
+        <li><%= link_to 'My Profile', user_path(current_user) %></li>
         <li><%= link_to 'Shoes', shoes_url(@shoe) %></li>
         <li><%= link_to 'Support', support_url(@support) %></li>
         <li><%= link_to 'Messages', conversations_url(@conversation) %></li>

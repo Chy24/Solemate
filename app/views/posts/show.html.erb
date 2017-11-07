@@ -95,7 +95,7 @@
 
 <div class="post-contact">
   <b><%= @post.user.username %></b><br>
-  <%= link_to "View Profile", current_user  %> |
+  <%= link_to "View Profile", user_path(@post.user)  %> |
 
   <% if !Conversation.between(current_user, @post.user).present? %> 
   <%= link_to 'Message', conversations_path(user2_id: @post.user.id), method: :post %>
