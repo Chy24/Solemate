@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    authorize @post
   end
 
   # POST /posts
@@ -50,6 +51,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    authorize @post
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -70,6 +73,7 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -81,4 +85,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:user_id_id, :title, :description, :brand, :shipping, :size, :color, :category, :condition, :asking_price, :auction, {images: []})
     end
+
 end

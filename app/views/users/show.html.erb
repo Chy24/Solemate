@@ -3,7 +3,7 @@
 
 <div class="text-center">
   <% if user_signed_in? && current_user.id == @user.id %>
-    <%= link_to "Edit Profile", edit_user_registration_path(@user)  %> |  <%= link_to 'My Messages', conversations_url(@conversation) %>
+    <%= link_to "Edit Profile", edit_user_registration_path  %> |  <%= link_to 'My Messages', conversations_url(@conversation) %>
   <% else %>
   <% if !Conversation.between(current_user, @user).present? %> 
     <%= link_to 'Message', conversations_path(user2_id: @user.id), method: :post %>

@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <% if @posts.blank? %>
-  <h4>There are no posts containing the term <%= params[:search] %>.</h4>
+  <h4>There are no posts containing the term <%= params[:search] %></h4>
 <% end %>
 
 <div class="row">
 <% @posts.each do |post| %>
 <div class="index-post">
-<div class=".col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0">
+<div class="col-12 col-sm-2 col-md-4 col-lg-4">
   <% if post.images.present? %>
     <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
     <% end %>

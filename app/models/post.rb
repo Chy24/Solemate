@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   mount_uploaders :images, ImageUploader
 
   def self.search(search)
-    where("title ILIKE ? OR brand ILIKE ? OR color ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%") 
+    where("title ILIKE ? OR brand ILIKE ? OR color ILIKE ? OR category ILIKE ? OR color ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
   end
 
   
