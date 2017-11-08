@@ -11,12 +11,14 @@ class PostsController < ApplicationController
     else
       @posts = Post.all.order("created_at DESC")
     end
-    
+
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    response = HTTParty.get("https://api.fixer.io/latest?base=AUD")
+    @conversion = response
   end
 
   # GET /posts/new

@@ -13,8 +13,10 @@
     <% end %>
     <% end %>
     <%= f.button id: "shoe_submit" , style: "display:none;" %>
+    <%= @shoe.likers.count %>
     <% end %>
   </div>
+
   <div class="text-center">
     <h1><%= @shoe.brand.upcase %></h1>
   </div>
