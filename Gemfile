@@ -44,6 +44,7 @@ gem 'httparty'
 gem 'bootstrap_form'
 gem "font-awesome-rails"
 gem "pundit"
+gem 'countries'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'

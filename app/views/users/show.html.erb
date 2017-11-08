@@ -13,6 +13,12 @@
   <% end %>
 </div>
 
+ <% if @user.images.present? %>
+<div class="text-center">
+  <%= image_tag @user.images_urls %> 
+</div>
+<% end %>
+
 <div class="text-center">
   <%= @user.bio %>
 </div>

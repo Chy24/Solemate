@@ -19,6 +19,7 @@ class PostsController < ApplicationController
   def show
     response = HTTParty.get("https://api.fixer.io/latest?base=AUD")
     @conversion = response
+    @convertnumber = params[:number]
   end
 
   # GET /posts/new

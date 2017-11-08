@@ -7,5 +7,8 @@ class Post < ApplicationRecord
     where("title ILIKE ? OR brand ILIKE ? OR color ILIKE ? OR category ILIKE ? OR color ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%") 
   end
 
-  
+  # def convert
+  #   ISO3166::Country.new(c.currency.code.upcase)
+  # end
+  # 
 end
