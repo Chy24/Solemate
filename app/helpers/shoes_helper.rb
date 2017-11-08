@@ -7,4 +7,5 @@ module ShoesHelper
   def search_helper
     fullname_shoe.split(",")
   end 
+
 end

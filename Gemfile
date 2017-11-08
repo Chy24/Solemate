@@ -42,6 +42,7 @@ gem 'stripe'
 gem 'mailgun-ruby', '~>1.1.6'
 gem 'httparty'
 gem 'bootstrap_form'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'

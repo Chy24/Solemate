@@ -43,7 +43,11 @@ class ShoesController < ApplicationController
   # PATCH/PUT /shoes/1.json
   def update
     respond_to do |format|
-      if @shoe.update(shoe_params)
+      if is_liking? 
+        @shoe.toggle_liked_by(current_user)
+        format.html { redirect_to @shoe }
+        format.json { render :show, status: :ok, location: @shoe }
+      elsif @shoe.update(shoe_params)
         format.html { redirect_to @shoe, notice: 'Shoe was successfully updated.' }
         format.json { render :show, status: :ok, location: @shoe }
       else
@@ -72,5 +76,9 @@ class ShoesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def shoe_params
       params.require(:shoe).permit(:title, :type, :brand, :size, :description, :color, :rating, {images: []} ) 
+    end
+
+    def is_liking?
+      params.require(:shoe)[:liked].present? 
     end
 end
