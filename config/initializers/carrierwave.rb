@@ -10,11 +10,11 @@ CarrierWave.configure do |config|
   # Use AWS storage if in production
   if Rails.env.production?
     CarrierWave.configure do |config|
-      config.storage = :fog
     end
   end
   
   config.fog_credentials = {
+    config.fog_provider = 'fog/aws'
     :provider               => 'AWS',                             # required
     :aws_access_key_id      => ENV.fetch("S3_ACCESS_KEY_ID"),            # required
     :aws_secret_access_key  => ENV.fetch("S3_SECRET_ACCESS_KEY"),     # required

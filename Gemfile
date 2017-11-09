@@ -45,7 +45,7 @@ gem 'bootstrap_form'
 gem "font-awesome-rails"
 gem "pundit"
 gem 'countries'
-gem 'fog'
+gem "fog-aws"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.6'
