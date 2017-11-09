@@ -71,7 +71,7 @@
   <%= @shoe.rating %>
 
 <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-  <%= hidden_field_tag :search, params[:search] || @shoe.title , placeholder: "Search Posts", id: 'nike' %>
+  <%= hidden_field_tag :search, params[:search] || @shoe.brand , placeholder: "Search Posts", id: 'nike' %>
   <%= submit_tag "Search listings", :name => nil %>
 <% end %>
 
