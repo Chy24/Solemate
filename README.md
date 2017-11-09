@@ -34,20 +34,34 @@ My ERD
 My Trello board for planning. Link is provided. 
 
 #### Challenges 
+![Migrations](/app/assets/images/Migrations.png "Migrations")
 
-I face a lot of problems building this application up from scratch. Here are some
+I faced a lot of problems building this application up from scratch. Here are some
 * Naming conventions are taken for granted when you’re making a small application but when you begin making one this large, you soon realise that naming things is a massive battle
 * I took the ERD for granted and didn’t think it was essential. Its very important
 * Rushing my code and then migrating my models and then making a typo and not double checking the migration file. Many migrations because of adding, removing and changing columns to ridiculous. 
 * Understanding the MVC but this project helped immensely 
 * Routing
 * The CSS was difficult even though I barely did any. Decided on using a lot of Bootstrap instead. 
+
 There were so many challenges throughout the project. 
 
 ### Favorite parts
 
 * I thoroughly enjoyed the design part of the project in Figma and finding inspiration (I didn’t get to put all aspects of them in the project). 
 * Implementing a feature and having so many errors is so daunting. But the feeling that you receive when you're able to fix them and see what you’ve made come to life is fantastic. 
+
+### Future implementations 
+
+There were so many features that I had planned to implement in my Figma that I wasn’t able to achieve. 
+* I wasn’t able to able to design a footer, about us page, contact page and I wanted to have a news page where daily information about releases of sneakers was being put out
+* Email and phone notifications would have been a function that I would have liked to have when a user would get a message from another user about a post, and they would receive an email notification. Phone notification so they wouldn’t have to supply the user with an actual phone number on the website. 
+* User profiles didn’t show all the things I had intended it to have. 
+    * Rating system on their profiles, so other users were able to see whether they were trustable sellers and buyers. This would advise other users whether they should deal with individuals.
+    * A list of shoes that followers liked and that they could receive emails once a post had been put up with that particular shoe that they wanted. 
+    * A list of my current posts
+* A search function to be able to search items based on categories
+* A rating system for shoes where users can give their reviews. It's very common for users to provide performance reviews on athletic shoes etc.
 
 There were also expansion plans that I had thought of if the application had taken off. 
 * Consignment is the function of when a store takes a product from a user and then sells it for them for a price. Then the assignee would receive a cut from the profits (e.g. 10%) of the selling price. This would remove the fuss from users having to sell their products and still receive a fair amount for their products
