@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"></p>
+
+<div class="float-left">
+  <%= link_to 'Back', posts_path %>
+</div>
 
 <div class = "post-heading">
   <div class="text-center">
@@ -75,7 +79,7 @@
 <% end %>
 </div>
 
-<div class="post-info">
+<div class="post-info text-center">
   <div class="container" >
     <div class="row">
       <div class="col">Asking Price: <b><%= @post.asking_price %></b></div>
@@ -106,14 +110,11 @@
   <% end %>
 </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-
+Convert price to different currency
 <%= form_with local: true, method: :get do |f| %>
 <%= f.text_field :number %>
 <%= f.button "Convert" %>
 <% end %>
-
 
 <% @conversion['rates'].each do |currency, rate| %>
 <% if params[:number] %>

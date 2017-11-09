@@ -13,24 +13,20 @@
   <% end %>
 </div>
 
- <% if @user.images.present? %>
-<div class="text-center">
+<div class="user-image text-center">
+  <% if @user.images.present? %>
   <%= image_tag @user.images_urls[0] %> 
+  <% end %>
 </div>
-<% end %>
 
-<div class="text-center">
+<div class="user-bio text-center">
   <%= @user.bio %>
 </div>
 
-<div class="text-center">
-  <%= @user.first_name %>
+<div class="user-name text-center">
+  <%= @user.first_name %> <%= @user.last_name %>
 </div>
 
-<div class="text-center">
-  <%= @user.last_name %>
-</div>
-
-<div class="text-center">
+<div class="user-location text-center">
   <%= @user.location %>
 </div>

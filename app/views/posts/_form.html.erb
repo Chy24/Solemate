@@ -10,62 +10,20 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title, id: :post_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :post_description %>
-  </div>
-
-  <div class="field">
-    <%= form.file_field :images, multiple: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :shipping %>
-    <%= form.check_box :shipping, id: :post_shipping %>
-  </div>
-
-    <div class="field">
-    <%= form.label :brand %>
-    <%= form.text_area :brand, id: :post_brand %>
-  </div>
-
-    <div class="field">
-    <%= form.label :size %>
-    <%= form.text_area :size, id: :post_size %>
-  </div>
-
-      <div class="field">
-    <%= form.label :color %>
-    <%= form.text_area :color, id: :post_color %>
-  </div>
-
-      <div class="field">
-    <%= form.label :category %>
-    <%= form.text_area :category, id: :post_category %>
-  </div>
-
-  <div class="field">
-    <%= form.label :condition %>
-    <%= form.text_area :condition, id: :post_condition %>
-  </div>
-
-  <div class="field">
-    <%= form.label :asking_price %>
-    <%= form.text_field :asking_price, id: :post_asking_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :auction %>
-    <%= form.check_box :auction, id: :post_auction %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+ <div class="setup-wrapper" >
+    <%= bootstrap_form_for(@post) do |f| %>
+    <div class='setup-form'>
+      <%= f.text_field :title %>
+      <%= f.text_field :brand %>
+      <%= f.text_field :asking_price %>
+      <%= f.text_field :category %>
+      <%= f.text_field :description %>
+      <%= form.file_field :images, multiple: true %>
+      <%= f.text_field :size %>
+      <%= f.text_field :condition %>
+      <%= f.text_field :auction %>
+      <%= f.submit "Submit", class: "btn btn-link setup-button" %>
+    </div>
+    <% end %>
   </div>
 <% end %>

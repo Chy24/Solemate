@@ -12,7 +12,7 @@
     <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
     <% end %>
     <br>
-    <div class="text-center"><%= link_to post.brand %> | <%= link_to post.title %></div>
+    <div class="text-center"><%= link_to post.brand, post %> | <%= link_to post.title, post %></div>
     <br>
     <div class="text-center"><%= link_to post.asking_price %></div>
 </div>

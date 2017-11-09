@@ -5,6 +5,7 @@ class Shoe < ApplicationRecord
   has_many :comments
   has_and_belongs_to_many :likers, class_name: 'User', join_table: :likes 
 
+  
   def liked_by?(user)
     likers.exists?(user.id)
   end

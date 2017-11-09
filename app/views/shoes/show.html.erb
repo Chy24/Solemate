@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "shoe-heading">
+  <% if user_signed_in? %>
   <div class="heart">
     <%= form_with(model: @shoe, method: :patch) do |f| %>
     <% liked = @shoe.liked_by?(current_user) %>
@@ -16,7 +17,7 @@
     <%= @shoe.likers.count %>
     <% end %>
   </div>
-
+  <% end %>
   <div class="text-center">
     <h1><%= @shoe.brand.upcase %></h1>
   </div>

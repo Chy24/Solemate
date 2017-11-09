@@ -16,11 +16,11 @@
         <% if user_signed_in? %>
         <li><%= link_to 'My Profile', user_path(current_user) %></li>
         <li><%= link_to 'Add Post', new_post_path(@post) %></li>
+        <li><%= link_to 'Messages', conversations_url(@conversation) %></li>
         <% end %>
         <li><%= link_to 'Shoes', shoes_url(@shoe) %></li>
         <li><%= link_to 'All Posts', posts_url(@post) %></li>
         <li><%= link_to 'Support', support_url(@support) %></li>
-        <li><%= link_to 'Messages', conversations_url(@conversation) %></li>
         <% if user_signed_in? %>
         <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>      
         <% else %>
