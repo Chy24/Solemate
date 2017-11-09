@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<% if @posts.blank? %>
-  <h4>There are no posts containing the term <%= params[:search] %>.</h4>
-<% end %>
-
 <div class="row">
 <% @shoes.each do |shoe| %>
 <div class="index-post">

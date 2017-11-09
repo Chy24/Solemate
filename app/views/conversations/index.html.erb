@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <div>
- <h1>Mailbox</h1>
- <div>
-  <div>
-   <% @conversations.each do |conversation| %>
-   <% if conversation.user1 == current_user || conversation.user2 == current_user %>
-    <% if conversation.user1 == current_user %>
-      <% recipient = User.find(conversation.user2.id) %>
-    <% else %>
-      <% recipient = User.find(conversation.user1.id) %>
-    <% end %>
-    <%= link_to recipient.username, conversation_messages_path(conversation)%>
-   <% end %>
-  <% end %>
-  </div>
- </div>
+  <h1>Mailbox <%= link_to '+', new_conversation_path, class: "float-right" %></h1>
 </div>
-<div>
 
-<%= link_to 'New Conversation', new_conversation_path %>
+<div>
+  <ul class="list-group">
+    <% @conversations.each do |conversation| %>
+    <% if conversation.user1 == current_user || conversation.user2 == current_user %>
+      <% if conversation.user1 == current_user %>
+        <% recipient = User.find(conversation.user2.id) %>
+      <% else %>
+      <% recipient = User.find(conversation.user1.id) %>
+      <% end %>
+      <li class="list-group-item">  
+        <% if recipient.images_urls.present? %> 
+          <%= image_tag recipient.images_urls(:thumb)[0] %> 
+        <% end %>
+        <%= link_to recipient.username, conversation_messages_path(conversation)%>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
