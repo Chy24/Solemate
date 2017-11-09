@@ -5,18 +5,18 @@
 
 
 <div class="row">
-<% @posts.each do |post| %>
-<div class="index-post">
-<div class=".col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0">
-  <% if post.images.present? %>
-    <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
-    <% end %>
-    <br>
-    <div class="text-center"><%= link_to post.brand %> | <%= link_to post.title %></div>
-    <br>
-    <div class="text-center"><%= link_to post.asking_price %></div>
-    <div class="text-center"><%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-</div>
-</div>
-<% end %>
+  <% @posts.each do |post| %>
+    <div class="index-post">
+      <div class=".col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0">
+        <% if post.images.present? %>
+          <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
+        <% end %>
+          <br>
+          <div class="text-center"><%= link_to post.brand %> | <%= link_to post.title %></div>
+          <br>
+          <div class="text-center"><%= link_to post.asking_price %></div>
+          <div class="text-center"><%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+    </div>
+  <% end %>
 </div>

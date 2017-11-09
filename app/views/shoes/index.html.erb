@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-<% @shoes.each do |shoe| %>
-<div class="index-post">
-<div class=".col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0">
-  <% if shoe.images.present? %>
-    <div class="text-center"><%= link_to image_tag(shoe.images_urls(:thumb)[0]), shoe %></div>
-    <% end %>
-    <br>
-    <div class="text-center"><%= link_to shoe.brand %> | <%= link_to shoe.title %></div>
-</div>
-</div>
-<% end %>
+  <% @shoes.each do |shoe| %>
+  <div class="index-post">
+    <div class=".col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0">
+      <% if shoe.images.present? %>
+        <div class="text-center"><%= link_to image_tag(shoe.images_urls(:thumb)[0]), shoe %></div>
+      <% end %>
+        <br>
+        <div class="text-center"><%= link_to shoe.brand %> | <%= link_to shoe.title %></div>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 

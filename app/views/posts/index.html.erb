@@ -5,17 +5,17 @@
 <% end %>
 
 <div class="row">
-<% @posts.each do |post| %>
-<div class="index-post">
-<div class="col-12 col-sm-2 col-md-4 col-lg-4">
-  <% if post.images.present? %>
-    <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
-    <% end %>
-    <br>
-    <div class="text-center"><%= link_to post.brand, post %> | <%= link_to post.title, post %></div>
-    <br>
-    <div class="text-center"><%= link_to post.asking_price %></div>
-</div>
-</div>
-<% end %>
+  <% @posts.each do |post| %>
+    <div class="index-post">
+      <div class="col-12 col-sm-2 col-md-4 col-lg-4">
+        <% if post.images.present? %>
+          <div class="text-center"><%= link_to image_tag(post.images_urls(:thumb)[0]), post %></div>
+        <% end %>
+        <br>
+        <div class="text-center"><%= link_to post.brand, post %> | <%= link_to post.title, post %></div>
+        <br>
+        <div class="text-center"><%= link_to post.asking_price %></div>
+      </div>
+    </div>
+  <% end %>
 </div>
