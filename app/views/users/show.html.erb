@@ -15,7 +15,7 @@
 
  <% if @user.images.present? %>
 <div class="text-center">
-  <%= image_tag @user.images_urls %> 
+  <%= image_tag @user.images_urls[0] %> 
 </div>
 <% end %>
 

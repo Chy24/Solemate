@@ -54,7 +54,8 @@
   </div>
 </div>
 
-<div class="col">Asking Price: <%= @post.asking_price %></div> 
+<div class="payment">
+<p>Buy it now if you want</p>
 <%= form_with(model: @charge) do |f| %> 
   <%= f.hidden_field :video_id %>
   <article>
@@ -68,16 +69,17 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="<%= @post.brand %> <%= @post.title %>"
           data-email="<%= current_user.email %>"
-          data-amount="<%= @post.asking_price %>"
+          data-amount="<%= @post.asking_price * 100 %>"
           data-currency="aud"
           data-locale="auto"></script>
 <% end %>
+</div>
 
 <div class="post-info">
   <div class="container" >
     <div class="row">
+      <div class="col">Asking Price: <b><%= @post.asking_price %></b></div>
       <div class="col">Size: <%= @post.size %></div>
-      <div class="col">Conditon: <%= @post.condition %></div>
       <div class="w-100"></div>
       <div class="col">Condition: <%= @post.condition %></div>
       <div class="col">Category: <%= @post.category %></div>
@@ -89,6 +91,7 @@
 </div>
 
 <div class="post-description">
+  <h4>Description</h4>
   <%= @post.description %>
 </div>
 

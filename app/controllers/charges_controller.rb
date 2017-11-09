@@ -19,7 +19,7 @@ class ChargesController < ApplicationController
     @charge.post = Post.find(params[:post_id])
     @charge.user = current_user 
     # Amount in cents
-    @amount = 500
+    @amount = (@amount * 100).to_i
 
     customer = Stripe::Customer.create(
       :email => current_user.email,
@@ -28,7 +28,7 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @amount,
+      :amount      => @amount
       :description => @charge.post.title,
       :currency    => 'aud' 
     )
