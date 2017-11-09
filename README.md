@@ -7,7 +7,7 @@
 ## The Problem? 
 Australia doesn’t have a centralised place that consumers can purchase shoes. Currently, if you’re looking for a specific shoe, you would have to research various sites such as the site's website, eBay, Gumtree, Facebook etc. This takes a lot of time and effort having to compare and continually visit these websites until you’re able to find the particular product or have it at a certain price. 
 
-![Examples](/app/assets/images/examplewebsite.png "Examples")
+![Examples](/app/assets/images/Examplewebsite.png "Examples")
 
 ## The Solution? 
 I decided to create a two-sided marketplace for buying, selling and trading shoes at one secure, convenient location. The website would have a database of all the shoes created where users can search for a specific shoe and see if a retailer or another user is selling it. If neither are available, they are also able to post requests up to see if anyone can help. The website would offer a wide variety of different outlets for the user to purchase their perfect shoe.  
