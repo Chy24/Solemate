@@ -33,18 +33,25 @@ My ERD
 
 My Trello board for planning. Link is provided. 
 
+### Gems
+devise,  carrierwave , bootstrap, mini_magick, jquery-rails,  stripe, mailgun-ruby,  httparty,  bootstrap_form, font-awesome-rails,  pundit, countries, fog-aws 
+
+### APIs 
+For APIs I decided to use a GIPHY API for my messenger model so that users were able to send a GIF as a message. This is because sometimes words cannot describe what you want to say to someone else. 
+I also decided to use a converter application for prices. Users can come from any country, and as the site is based in Australia, I wanted users to be able to convert the amount to know what it would cost in their currency. There were also some other APIS included from the gems that were asked to implement such as Stripe or Mail gun. 
+
+
 #### Challenges 
 ![Migrations](/app/assets/images/Migrations.png "Migrations")
 
-I faced a lot of problems building this application up from scratch. Here are some
+I faced a lot of problems building this application up from scratch. There were so many challenges throughout the project but here are some
 * Naming conventions are taken for granted when you’re making a small application but when you begin making one this large, you soon realise that naming things is a massive battle
 * I took the ERD for granted and didn’t think it was essential. Its very important
 * Rushing my code and then migrating my models and then making a typo and not double checking the migration file. Many migrations because of adding, removing and changing columns to ridiculous. 
 * Understanding the MVC but this project helped immensely 
 * Routing
 * The CSS was difficult even though I barely did any. Decided on using a lot of Bootstrap instead. 
-
-There were so many challenges throughout the project. 
+* I found that keeping a timeline was difficult since it was the first rails project I had done and did not know how to manage my time
 
 ### Favorite parts
 
